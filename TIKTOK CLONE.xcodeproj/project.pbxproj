@@ -27,7 +27,14 @@
 		14164873272DB2CD00032EA8 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14164872272DB2CD00032EA8 /* DatabaseManager.swift */; };
 		14164875272DB2D800032EA8 /* AuthenticationManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14164874272DB2D800032EA8 /* AuthenticationManger.swift */; };
 		14164877272DB2E500032EA8 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14164876272DB2E500032EA8 /* HapticsManager.swift */; };
+		14192F34273A95FA00886228 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 14192F33273A95FA00886228 /* video.mp4 */; };
+		144181992735102700B7D789 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144181982735102700B7D789 /* PostModel.swift */; };
+		14A4C41F2736AEFE0026DF4B /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A4C41E2736AEFE0026DF4B /* CommentViewController.swift */; };
+		14A4C4212736C1A10026DF4B /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A4C4202736C1A10026DF4B /* PostComment.swift */; };
+		14A4C4232736C1DA0026DF4B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A4C4222736C1DA0026DF4B /* User.swift */; };
+		14ACFAA82737F69B0090D6C1 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ACFAA72737F69B0090D6C1 /* CommentTableViewCell.swift */; };
 		14D10CFD272EAED90055838C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14D10CFC272EAED90055838C /* GoogleService-Info.plist */; };
+		14D10D00272EBEAC0055838C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D10CFF272EBEAC0055838C /* Extensions.swift */; };
 		8C414A3612DB8A9AF204EE43 /* Pods_TIKTOK_CLONE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95A88F98202DF667876DAFC /* Pods_TIKTOK_CLONE.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,7 +61,14 @@
 		14164872272DB2CD00032EA8 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		14164874272DB2D800032EA8 /* AuthenticationManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManger.swift; sourceTree = "<group>"; };
 		14164876272DB2E500032EA8 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
+		14192F33273A95FA00886228 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
+		144181982735102700B7D789 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		14A4C41E2736AEFE0026DF4B /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		14A4C4202736C1A10026DF4B /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
+		14A4C4222736C1DA0026DF4B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		14ACFAA72737F69B0090D6C1 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		14D10CFC272EAED90055838C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		14D10CFF272EBEAC0055838C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2774AFF0BA3760FDE30B7446 /* Pods-TIKTOK CLONE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIKTOK CLONE.debug.xcconfig"; path = "Target Support Files/Pods-TIKTOK CLONE/Pods-TIKTOK CLONE.debug.xcconfig"; sourceTree = "<group>"; };
 		D95A88F98202DF667876DAFC /* Pods_TIKTOK_CLONE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TIKTOK_CLONE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7BA4E9A68D2BF4DB1B2D92 /* Pods-TIKTOK CLONE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIKTOK CLONE.release.xcconfig"; path = "Target Support Files/Pods-TIKTOK CLONE/Pods-TIKTOK CLONE.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,10 +121,12 @@
 		1416484E272DB04100032EA8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				14192F33273A95FA00886228 /* video.mp4 */,
 				14164843272DA78F00032EA8 /* Assets.xcassets */,
 				14D10CFC272EAED90055838C /* GoogleService-Info.plist */,
 				1416483A272DA78E00032EA8 /* AppDelegate.swift */,
 				1416483C272DA78E00032EA8 /* SceneDelegate.swift */,
+				14D10CFF272EBEAC0055838C /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -136,6 +152,9 @@
 		14164851272DB08700032EA8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				144181982735102700B7D789 /* PostModel.swift */,
+				14A4C4202736C1A10026DF4B /* PostComment.swift */,
+				14A4C4222736C1DA0026DF4B /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -180,6 +199,8 @@
 				14164864272DB1D000032EA8 /* SignUpViewController.swift */,
 				14164866272DB1E600032EA8 /* SettingsViewController.swift */,
 				1416486C272DB28000032EA8 /* PostViewController.swift */,
+				14A4C41E2736AEFE0026DF4B /* CommentViewController.swift */,
+				14ACFAA72737F69B0090D6C1 /* CommentTableViewCell.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -280,6 +301,7 @@
 				14164847272DA78F00032EA8 /* LaunchScreen.storyboard in Resources */,
 				14164844272DA78F00032EA8 /* Assets.xcassets in Resources */,
 				14D10CFD272EAED90055838C /* GoogleService-Info.plist in Resources */,
+				14192F34273A95FA00886228 /* video.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,23 +372,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				14164877272DB2E500032EA8 /* HapticsManager.swift in Sources */,
+				144181992735102700B7D789 /* PostModel.swift in Sources */,
 				14164873272DB2CD00032EA8 /* DatabaseManager.swift in Sources */,
 				14164857272DB14A00032EA8 /* ExploreViewController.swift in Sources */,
 				14164861272DB1B600032EA8 /* UserListViewController.swift in Sources */,
 				14164867272DB1E600032EA8 /* SettingsViewController.swift in Sources */,
 				1416486F272DB2A900032EA8 /* APICaller.swift in Sources */,
 				1416486D272DB28000032EA8 /* PostViewController.swift in Sources */,
+				14D10D00272EBEAC0055838C /* Extensions.swift in Sources */,
 				14164859272DB15C00032EA8 /* CameraViewController.swift in Sources */,
 				14164869272DB21700032EA8 /* TabBarViewController.swift in Sources */,
 				1416485B272DB16B00032EA8 /* NotificationViewController.swift in Sources */,
 				14164875272DB2D800032EA8 /* AuthenticationManger.swift in Sources */,
 				14164865272DB1D000032EA8 /* SignUpViewController.swift in Sources */,
+				14A4C41F2736AEFE0026DF4B /* CommentViewController.swift in Sources */,
+				14A4C4212736C1A10026DF4B /* PostComment.swift in Sources */,
 				1416483F272DA78E00032EA8 /* HomeViewController.swift in Sources */,
 				14164863272DB1C500032EA8 /* SignInViewController.swift in Sources */,
 				1416485E272DB18800032EA8 /* ProfileViewController.swift in Sources */,
+				14ACFAA82737F69B0090D6C1 /* CommentTableViewCell.swift in Sources */,
 				14164871272DB2BC00032EA8 /* StorageManager.swift in Sources */,
 				1416483B272DA78E00032EA8 /* AppDelegate.swift in Sources */,
 				1416483D272DA78E00032EA8 /* SceneDelegate.swift in Sources */,
+				14A4C4232736C1DA0026DF4B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
