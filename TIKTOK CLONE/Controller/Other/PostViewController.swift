@@ -67,6 +67,9 @@ class PostViewController: UIViewController {
     
     
     var player : AVPlayer?
+    private var playerDidFinishVideoObserver : NSObjectProtocol?
+    
+    
     
     //MARK: - Init
     init(model : PostModel){
@@ -102,7 +105,7 @@ class PostViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let size : CGFloat = 40
-        let yStart : CGFloat = view.height - (size*4) - 30 - view.safeAreaInsets.bottom - (tabBarController?.tabBar.height ?? 0)
+        let yStart : CGFloat = view.height - (size*4) - 30 - view.safeAreaInsets.bottom - (0)
         for (index,button) in [likeButton,commentButton,shareButton].enumerated(){
             button.frame = CGRect(x: view.width - size - 10,
                                   y: yStart + (CGFloat(index)*size) + (CGFloat(index)*10) ,
@@ -113,7 +116,7 @@ class PostViewController: UIViewController {
         captionLabel.sizeToFit()
         let labelSize = captionLabel.sizeThatFits(CGSize(width:  view.width - size - 12, height: view.height))
         captionLabel.frame = CGRect(x: 5,
-                                    y: view.height - 10 - view.safeAreaInsets.bottom - labelSize.height - (tabBarController?.tabBar.height ?? 0),
+                                    y: view.height - 10 - view.safeAreaInsets.bottom - labelSize.height - (0),
                                     width: view.width - size - 12,
                                     height: labelSize.height)
         
@@ -122,6 +125,7 @@ class PostViewController: UIViewController {
                                      width: size,
                                      height: size)
         profileButton.layer.cornerRadius = 20
+        profileButton.layer.masksToBounds = true
     }
     
     func setupButtons(){
@@ -158,8 +162,21 @@ class PostViewController: UIViewController {
         playerLayer.videoGravity = .resizeAspectFill
         view.layer.addSublayer(playerLayer)
         player?.volume = 0
-        
         player?.play()
+        
+        guard let player = player else {
+            return
+        }
+
+        
+        playerDidFinishVideoObserver =  NotificationCenter.default.addObserver(
+            forName: .AVPlayerItemDidPlayToEndTime, //which type of notification to be sent ?
+            object: player.currentItem, //responsible for sending notification
+            queue: .main,
+            using: { _ in
+                player.seek(to: .zero)
+                player.play()
+            })
     }
     
     @objc private func didDoubleTap(_ gesture : UITapGestureRecognizer ){

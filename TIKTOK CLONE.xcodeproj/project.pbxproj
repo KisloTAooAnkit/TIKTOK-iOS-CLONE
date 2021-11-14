@@ -29,6 +29,20 @@
 		14164877272DB2E500032EA8 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14164876272DB2E500032EA8 /* HapticsManager.swift */; };
 		14192F34273A95FA00886228 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 14192F33273A95FA00886228 /* video.mp4 */; };
 		144181992735102700B7D789 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144181982735102700B7D789 /* PostModel.swift */; };
+		146A5346273CBFA3006C7F52 /* CompositionalVIewPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A5345273CBFA3006C7F52 /* CompositionalVIewPractice.swift */; };
+		146A5348273CDAAC006C7F52 /* ExploreSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A5347273CDAAC006C7F52 /* ExploreSection.swift */; };
+		146A534A273CDAD2006C7F52 /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A5349273CDAD2006C7F52 /* ExploreCell.swift */; };
+		146A534C273CDAEF006C7F52 /* ExploreSectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A534B273CDAEF006C7F52 /* ExploreSectionType.swift */; };
+		146A534E273CDC4C006C7F52 /* ExploreBannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A534D273CDC4C006C7F52 /* ExploreBannerViewModel.swift */; };
+		146A5350273CDC60006C7F52 /* ExplorePostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A534F273CDC60006C7F52 /* ExplorePostViewModel.swift */; };
+		146A5352273CDC90006C7F52 /* ExploreHashtagViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A5351273CDC90006C7F52 /* ExploreHashtagViewModel.swift */; };
+		146A5354273CDCC2006C7F52 /* ExploreUserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A5353273CDCC2006C7F52 /* ExploreUserViewModel.swift */; };
+		146A5356273D12BD006C7F52 /* explore.json in Resources */ = {isa = PBXBuildFile; fileRef = 146A5355273D12BD006C7F52 /* explore.json */; };
+		146A5358273D1367006C7F52 /* ExploreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A5357273D1367006C7F52 /* ExploreManager.swift */; };
+		146A535A273D1F67006C7F52 /* ExploreBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A5359273D1F67006C7F52 /* ExploreBannerCollectionViewCell.swift */; };
+		146A535C273D1F76006C7F52 /* ExplorePostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A535B273D1F76006C7F52 /* ExplorePostCollectionViewCell.swift */; };
+		146A535E273D1F84006C7F52 /* ExploreUserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A535D273D1F84006C7F52 /* ExploreUserCollectionViewCell.swift */; };
+		146A5360273D1F90006C7F52 /* ExploreHashtagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A535F273D1F90006C7F52 /* ExploreHashtagCollectionViewCell.swift */; };
 		14A4C41F2736AEFE0026DF4B /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A4C41E2736AEFE0026DF4B /* CommentViewController.swift */; };
 		14A4C4212736C1A10026DF4B /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A4C4202736C1A10026DF4B /* PostComment.swift */; };
 		14A4C4232736C1DA0026DF4B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A4C4222736C1DA0026DF4B /* User.swift */; };
@@ -63,6 +77,20 @@
 		14164876272DB2E500032EA8 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		14192F33273A95FA00886228 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		144181982735102700B7D789 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		146A5345273CBFA3006C7F52 /* CompositionalVIewPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalVIewPractice.swift; sourceTree = "<group>"; };
+		146A5347273CDAAC006C7F52 /* ExploreSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSection.swift; sourceTree = "<group>"; };
+		146A5349273CDAD2006C7F52 /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
+		146A534B273CDAEF006C7F52 /* ExploreSectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSectionType.swift; sourceTree = "<group>"; };
+		146A534D273CDC4C006C7F52 /* ExploreBannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBannerViewModel.swift; sourceTree = "<group>"; };
+		146A534F273CDC60006C7F52 /* ExplorePostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostViewModel.swift; sourceTree = "<group>"; };
+		146A5351273CDC90006C7F52 /* ExploreHashtagViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHashtagViewModel.swift; sourceTree = "<group>"; };
+		146A5353273CDCC2006C7F52 /* ExploreUserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserViewModel.swift; sourceTree = "<group>"; };
+		146A5355273D12BD006C7F52 /* explore.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = explore.json; sourceTree = "<group>"; };
+		146A5357273D1367006C7F52 /* ExploreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreManager.swift; sourceTree = "<group>"; };
+		146A5359273D1F67006C7F52 /* ExploreBannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		146A535B273D1F76006C7F52 /* ExplorePostCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePostCollectionViewCell.swift; sourceTree = "<group>"; };
+		146A535D273D1F84006C7F52 /* ExploreUserCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreUserCollectionViewCell.swift; sourceTree = "<group>"; };
+		146A535F273D1F90006C7F52 /* ExploreHashtagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreHashtagCollectionViewCell.swift; sourceTree = "<group>"; };
 		14A4C41E2736AEFE0026DF4B /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		14A4C4202736C1A10026DF4B /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
 		14A4C4222736C1DA0026DF4B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -107,6 +135,7 @@
 		14164839272DA78E00032EA8 /* TIKTOK CLONE */ = {
 			isa = PBXGroup;
 			children = (
+				146A5344273CBF7C006C7F52 /* Practice */,
 				14164853272DB0A500032EA8 /* Managers */,
 				14164852272DB08E00032EA8 /* ViewModels */,
 				14164851272DB08700032EA8 /* Models */,
@@ -121,6 +150,7 @@
 		1416484E272DB04100032EA8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				146A5355273D12BD006C7F52 /* explore.json */,
 				14192F33273A95FA00886228 /* video.mp4 */,
 				14164843272DA78F00032EA8 /* Assets.xcassets */,
 				14D10CFC272EAED90055838C /* GoogleService-Info.plist */,
@@ -155,6 +185,9 @@
 				144181982735102700B7D789 /* PostModel.swift */,
 				14A4C4202736C1A10026DF4B /* PostComment.swift */,
 				14A4C4222736C1DA0026DF4B /* User.swift */,
+				146A5347273CDAAC006C7F52 /* ExploreSection.swift */,
+				146A5349273CDAD2006C7F52 /* ExploreCell.swift */,
+				146A534B273CDAEF006C7F52 /* ExploreSectionType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -162,6 +195,10 @@
 		14164852272DB08E00032EA8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				146A534D273CDC4C006C7F52 /* ExploreBannerViewModel.swift */,
+				146A534F273CDC60006C7F52 /* ExplorePostViewModel.swift */,
+				146A5351273CDC90006C7F52 /* ExploreHashtagViewModel.swift */,
+				146A5353273CDCC2006C7F52 /* ExploreUserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -174,6 +211,7 @@
 				14164872272DB2CD00032EA8 /* DatabaseManager.swift */,
 				14164874272DB2D800032EA8 /* AuthenticationManger.swift */,
 				14164876272DB2E500032EA8 /* HapticsManager.swift */,
+				146A5357273D1367006C7F52 /* ExploreManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -216,8 +254,20 @@
 		1416486B272DB24100032EA8 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				146A5359273D1F67006C7F52 /* ExploreBannerCollectionViewCell.swift */,
+				146A535B273D1F76006C7F52 /* ExplorePostCollectionViewCell.swift */,
+				146A535D273D1F84006C7F52 /* ExploreUserCollectionViewCell.swift */,
+				146A535F273D1F90006C7F52 /* ExploreHashtagCollectionViewCell.swift */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		146A5344273CBF7C006C7F52 /* Practice */ = {
+			isa = PBXGroup;
+			children = (
+				146A5345273CBFA3006C7F52 /* CompositionalVIewPractice.swift */,
+			);
+			path = Practice;
 			sourceTree = "<group>";
 		};
 		E4BFF2FADC824CC8209D250C /* Pods */ = {
@@ -298,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				146A5356273D12BD006C7F52 /* explore.json in Resources */,
 				14164847272DA78F00032EA8 /* LaunchScreen.storyboard in Resources */,
 				14164844272DA78F00032EA8 /* Assets.xcassets in Resources */,
 				14D10CFD272EAED90055838C /* GoogleService-Info.plist in Resources */,
@@ -374,27 +425,40 @@
 				14164877272DB2E500032EA8 /* HapticsManager.swift in Sources */,
 				144181992735102700B7D789 /* PostModel.swift in Sources */,
 				14164873272DB2CD00032EA8 /* DatabaseManager.swift in Sources */,
+				146A5358273D1367006C7F52 /* ExploreManager.swift in Sources */,
 				14164857272DB14A00032EA8 /* ExploreViewController.swift in Sources */,
 				14164861272DB1B600032EA8 /* UserListViewController.swift in Sources */,
+				146A5348273CDAAC006C7F52 /* ExploreSection.swift in Sources */,
 				14164867272DB1E600032EA8 /* SettingsViewController.swift in Sources */,
 				1416486F272DB2A900032EA8 /* APICaller.swift in Sources */,
+				146A535C273D1F76006C7F52 /* ExplorePostCollectionViewCell.swift in Sources */,
+				146A534E273CDC4C006C7F52 /* ExploreBannerViewModel.swift in Sources */,
+				146A534A273CDAD2006C7F52 /* ExploreCell.swift in Sources */,
 				1416486D272DB28000032EA8 /* PostViewController.swift in Sources */,
 				14D10D00272EBEAC0055838C /* Extensions.swift in Sources */,
 				14164859272DB15C00032EA8 /* CameraViewController.swift in Sources */,
 				14164869272DB21700032EA8 /* TabBarViewController.swift in Sources */,
 				1416485B272DB16B00032EA8 /* NotificationViewController.swift in Sources */,
+				146A535A273D1F67006C7F52 /* ExploreBannerCollectionViewCell.swift in Sources */,
 				14164875272DB2D800032EA8 /* AuthenticationManger.swift in Sources */,
 				14164865272DB1D000032EA8 /* SignUpViewController.swift in Sources */,
 				14A4C41F2736AEFE0026DF4B /* CommentViewController.swift in Sources */,
 				14A4C4212736C1A10026DF4B /* PostComment.swift in Sources */,
+				146A5360273D1F90006C7F52 /* ExploreHashtagCollectionViewCell.swift in Sources */,
 				1416483F272DA78E00032EA8 /* HomeViewController.swift in Sources */,
+				146A535E273D1F84006C7F52 /* ExploreUserCollectionViewCell.swift in Sources */,
+				146A5350273CDC60006C7F52 /* ExplorePostViewModel.swift in Sources */,
 				14164863272DB1C500032EA8 /* SignInViewController.swift in Sources */,
 				1416485E272DB18800032EA8 /* ProfileViewController.swift in Sources */,
+				146A534C273CDAEF006C7F52 /* ExploreSectionType.swift in Sources */,
 				14ACFAA82737F69B0090D6C1 /* CommentTableViewCell.swift in Sources */,
 				14164871272DB2BC00032EA8 /* StorageManager.swift in Sources */,
 				1416483B272DA78E00032EA8 /* AppDelegate.swift in Sources */,
 				1416483D272DA78E00032EA8 /* SceneDelegate.swift in Sources */,
+				146A5352273CDC90006C7F52 /* ExploreHashtagViewModel.swift in Sources */,
 				14A4C4232736C1DA0026DF4B /* User.swift in Sources */,
+				146A5346273CBFA3006C7F52 /* CompositionalVIewPractice.swift in Sources */,
+				146A5354273CDCC2006C7F52 /* ExploreUserViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
