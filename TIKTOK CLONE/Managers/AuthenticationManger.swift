@@ -12,6 +12,10 @@ final class AuthManager {
     
     public static let shared = AuthManager()
     
+    public var isSignedIn : Bool {
+        return Auth.auth().currentUser != nil
+    }
+    
     enum SignInMethod {
         case email
         case facebook
@@ -31,12 +35,19 @@ final class AuthManager {
         
     }
     
-    public func signIn(with method : SignInMethod){
+    public func signIn(with email : String , password: String,completion : @escaping (Bool)->Void) {
         
     }
     
-    public func signOut() {
-        
+    public func signOut(completion : (Bool)->Void) {
+        do{
+            try Auth.auth().signOut()
+            completion(true)
+        }
+        catch{
+            print(error)
+            completion(false)
+        }
     }
     
 }

@@ -49,6 +49,8 @@
 		14ACFAA82737F69B0090D6C1 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ACFAA72737F69B0090D6C1 /* CommentTableViewCell.swift */; };
 		14D10CFD272EAED90055838C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14D10CFC272EAED90055838C /* GoogleService-Info.plist */; };
 		14D10D00272EBEAC0055838C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D10CFF272EBEAC0055838C /* Extensions.swift */; };
+		14F0E63E274140360067F156 /* AuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0E63D274140360067F156 /* AuthField.swift */; };
+		14F0E640274140590067F156 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0E63F274140590067F156 /* AuthButton.swift */; };
 		8C414A3612DB8A9AF204EE43 /* Pods_TIKTOK_CLONE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95A88F98202DF667876DAFC /* Pods_TIKTOK_CLONE.framework */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +99,8 @@
 		14ACFAA72737F69B0090D6C1 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		14D10CFC272EAED90055838C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		14D10CFF272EBEAC0055838C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		14F0E63D274140360067F156 /* AuthField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthField.swift; sourceTree = "<group>"; };
+		14F0E63F274140590067F156 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		2774AFF0BA3760FDE30B7446 /* Pods-TIKTOK CLONE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIKTOK CLONE.debug.xcconfig"; path = "Target Support Files/Pods-TIKTOK CLONE/Pods-TIKTOK CLONE.debug.xcconfig"; sourceTree = "<group>"; };
 		D95A88F98202DF667876DAFC /* Pods_TIKTOK_CLONE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TIKTOK_CLONE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD7BA4E9A68D2BF4DB1B2D92 /* Pods-TIKTOK CLONE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TIKTOK CLONE.release.xcconfig"; path = "Target Support Files/Pods-TIKTOK CLONE/Pods-TIKTOK CLONE.release.xcconfig"; sourceTree = "<group>"; };
@@ -233,8 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				14164860272DB1B600032EA8 /* UserListViewController.swift */,
-				14164862272DB1C500032EA8 /* SignInViewController.swift */,
-				14164864272DB1D000032EA8 /* SignUpViewController.swift */,
+				14F0E63C27413AFB0067F156 /* Authentication */,
 				14164866272DB1E600032EA8 /* SettingsViewController.swift */,
 				1416486C272DB28000032EA8 /* PostViewController.swift */,
 				14A4C41E2736AEFE0026DF4B /* CommentViewController.swift */,
@@ -258,6 +261,8 @@
 				146A535B273D1F76006C7F52 /* ExplorePostCollectionViewCell.swift */,
 				146A535D273D1F84006C7F52 /* ExploreUserCollectionViewCell.swift */,
 				146A535F273D1F90006C7F52 /* ExploreHashtagCollectionViewCell.swift */,
+				14F0E63D274140360067F156 /* AuthField.swift */,
+				14F0E63F274140590067F156 /* AuthButton.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -268,6 +273,15 @@
 				146A5345273CBFA3006C7F52 /* CompositionalVIewPractice.swift */,
 			);
 			path = Practice;
+			sourceTree = "<group>";
+		};
+		14F0E63C27413AFB0067F156 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				14164862272DB1C500032EA8 /* SignInViewController.swift */,
+				14164864272DB1D000032EA8 /* SignUpViewController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		E4BFF2FADC824CC8209D250C /* Pods */ = {
@@ -423,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14164877272DB2E500032EA8 /* HapticsManager.swift in Sources */,
+				14F0E640274140590067F156 /* AuthButton.swift in Sources */,
 				144181992735102700B7D789 /* PostModel.swift in Sources */,
 				14164873272DB2CD00032EA8 /* DatabaseManager.swift in Sources */,
 				146A5358273D1367006C7F52 /* ExploreManager.swift in Sources */,
@@ -454,6 +469,7 @@
 				14ACFAA82737F69B0090D6C1 /* CommentTableViewCell.swift in Sources */,
 				14164871272DB2BC00032EA8 /* StorageManager.swift in Sources */,
 				1416483B272DA78E00032EA8 /* AppDelegate.swift in Sources */,
+				14F0E63E274140360067F156 /* AuthField.swift in Sources */,
 				1416483D272DA78E00032EA8 /* SceneDelegate.swift in Sources */,
 				146A5352273CDC90006C7F52 /* ExploreHashtagViewModel.swift in Sources */,
 				14A4C4232736C1DA0026DF4B /* User.swift in Sources */,
