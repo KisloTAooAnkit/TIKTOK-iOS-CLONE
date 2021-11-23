@@ -29,6 +29,7 @@
 		14164877272DB2E500032EA8 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14164876272DB2E500032EA8 /* HapticsManager.swift */; };
 		14192F34273A95FA00886228 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 14192F33273A95FA00886228 /* video.mp4 */; };
 		144181992735102700B7D789 /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 144181982735102700B7D789 /* PostModel.swift */; };
+		145C041B2747B87300C7FE25 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 145C041A2747B87300C7FE25 /* GoogleService-Info.plist */; };
 		146A5346273CBFA3006C7F52 /* CompositionalVIewPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A5345273CBFA3006C7F52 /* CompositionalVIewPractice.swift */; };
 		146A5348273CDAAC006C7F52 /* ExploreSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A5347273CDAAC006C7F52 /* ExploreSection.swift */; };
 		146A534A273CDAD2006C7F52 /* ExploreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146A5349273CDAD2006C7F52 /* ExploreCell.swift */; };
@@ -47,7 +48,8 @@
 		14A4C4212736C1A10026DF4B /* PostComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A4C4202736C1A10026DF4B /* PostComment.swift */; };
 		14A4C4232736C1DA0026DF4B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14A4C4222736C1DA0026DF4B /* User.swift */; };
 		14ACFAA82737F69B0090D6C1 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ACFAA72737F69B0090D6C1 /* CommentTableViewCell.swift */; };
-		14D10CFD272EAED90055838C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14D10CFC272EAED90055838C /* GoogleService-Info.plist */; };
+		14CDF5A1274C8F110042851C /* CaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14CDF5A0274C8F110042851C /* CaptionViewController.swift */; };
+		14D06067274BE697005EABB0 /* RecordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D06066274BE697005EABB0 /* RecordButton.swift */; };
 		14D10D00272EBEAC0055838C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D10CFF272EBEAC0055838C /* Extensions.swift */; };
 		14F0E63E274140360067F156 /* AuthField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0E63D274140360067F156 /* AuthField.swift */; };
 		14F0E640274140590067F156 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F0E63F274140590067F156 /* AuthButton.swift */; };
@@ -79,6 +81,7 @@
 		14164876272DB2E500032EA8 /* HapticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		14192F33273A95FA00886228 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		144181982735102700B7D789 /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		145C041A2747B87300C7FE25 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		146A5345273CBFA3006C7F52 /* CompositionalVIewPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositionalVIewPractice.swift; sourceTree = "<group>"; };
 		146A5347273CDAAC006C7F52 /* ExploreSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreSection.swift; sourceTree = "<group>"; };
 		146A5349273CDAD2006C7F52 /* ExploreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreCell.swift; sourceTree = "<group>"; };
@@ -97,7 +100,8 @@
 		14A4C4202736C1A10026DF4B /* PostComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComment.swift; sourceTree = "<group>"; };
 		14A4C4222736C1DA0026DF4B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		14ACFAA72737F69B0090D6C1 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
-		14D10CFC272EAED90055838C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		14CDF5A0274C8F110042851C /* CaptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptionViewController.swift; sourceTree = "<group>"; };
+		14D06066274BE697005EABB0 /* RecordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordButton.swift; sourceTree = "<group>"; };
 		14D10CFF272EBEAC0055838C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		14F0E63D274140360067F156 /* AuthField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthField.swift; sourceTree = "<group>"; };
 		14F0E63F274140590067F156 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
@@ -154,10 +158,10 @@
 		1416484E272DB04100032EA8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				145C041A2747B87300C7FE25 /* GoogleService-Info.plist */,
 				146A5355273D12BD006C7F52 /* explore.json */,
 				14192F33273A95FA00886228 /* video.mp4 */,
 				14164843272DA78F00032EA8 /* Assets.xcassets */,
-				14D10CFC272EAED90055838C /* GoogleService-Info.plist */,
 				1416483A272DA78E00032EA8 /* AppDelegate.swift */,
 				1416483C272DA78E00032EA8 /* SceneDelegate.swift */,
 				14D10CFF272EBEAC0055838C /* Extensions.swift */,
@@ -236,12 +240,13 @@
 		14164855272DB12700032EA8 /* Other */ = {
 			isa = PBXGroup;
 			children = (
-				14164860272DB1B600032EA8 /* UserListViewController.swift */,
 				14F0E63C27413AFB0067F156 /* Authentication */,
+				14164860272DB1B600032EA8 /* UserListViewController.swift */,
 				14164866272DB1E600032EA8 /* SettingsViewController.swift */,
 				1416486C272DB28000032EA8 /* PostViewController.swift */,
 				14A4C41E2736AEFE0026DF4B /* CommentViewController.swift */,
 				14ACFAA72737F69B0090D6C1 /* CommentTableViewCell.swift */,
+				14CDF5A0274C8F110042851C /* CaptionViewController.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -263,6 +268,7 @@
 				146A535F273D1F90006C7F52 /* ExploreHashtagCollectionViewCell.swift */,
 				14F0E63D274140360067F156 /* AuthField.swift */,
 				14F0E63F274140590067F156 /* AuthButton.swift */,
+				14D06066274BE697005EABB0 /* RecordButton.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -364,8 +370,8 @@
 			files = (
 				146A5356273D12BD006C7F52 /* explore.json in Resources */,
 				14164847272DA78F00032EA8 /* LaunchScreen.storyboard in Resources */,
+				145C041B2747B87300C7FE25 /* GoogleService-Info.plist in Resources */,
 				14164844272DA78F00032EA8 /* Assets.xcassets in Resources */,
-				14D10CFD272EAED90055838C /* GoogleService-Info.plist in Resources */,
 				14192F34273A95FA00886228 /* video.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,6 +451,7 @@
 				14164861272DB1B600032EA8 /* UserListViewController.swift in Sources */,
 				146A5348273CDAAC006C7F52 /* ExploreSection.swift in Sources */,
 				14164867272DB1E600032EA8 /* SettingsViewController.swift in Sources */,
+				14CDF5A1274C8F110042851C /* CaptionViewController.swift in Sources */,
 				1416486F272DB2A900032EA8 /* APICaller.swift in Sources */,
 				146A535C273D1F76006C7F52 /* ExplorePostCollectionViewCell.swift in Sources */,
 				146A534E273CDC4C006C7F52 /* ExploreBannerViewModel.swift in Sources */,
@@ -460,6 +467,7 @@
 				14A4C41F2736AEFE0026DF4B /* CommentViewController.swift in Sources */,
 				14A4C4212736C1A10026DF4B /* PostComment.swift in Sources */,
 				146A5360273D1F90006C7F52 /* ExploreHashtagCollectionViewCell.swift in Sources */,
+				14D06067274BE697005EABB0 /* RecordButton.swift in Sources */,
 				1416483F272DA78E00032EA8 /* HomeViewController.swift in Sources */,
 				146A535E273D1F84006C7F52 /* ExploreUserCollectionViewCell.swift in Sources */,
 				146A5350273CDC60006C7F52 /* ExplorePostViewModel.swift in Sources */,

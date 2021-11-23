@@ -33,11 +33,30 @@ class SignInViewController: UIViewController , UITextFieldDelegate {
         super.viewDidLoad()
         addSubviews()
         configureButtons()
-
+        configureFields()
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemBackground
         title = "Sign In"
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        layoutUI()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        emailField.becomeFirstResponder()
+    }
+    
+    private func addSubviews() {
+        view.addSubview(logoImageView)
+        view.addSubview(emailField)
+        view.addSubview(passwordField)
+        view.addSubview(signInButton)
+        view.addSubview(forgotPasswordButton)
+        view.addSubview(signUpButton)
+    }
+    
     
     private func configureFields(){
         emailField.delegate = self
@@ -57,15 +76,7 @@ class SignInViewController: UIViewController , UITextFieldDelegate {
         passwordField.resignFirstResponder()
     }
     
-    private func addSubviews() {
-        view.addSubview(logoImageView)
-        view.addSubview(emailField)
-        view.addSubview(passwordField)
-        view.addSubview(signInButton)
-        view.addSubview(forgotPasswordButton)
-        view.addSubview(signUpButton)
-    }
-    
+
     private func configureButtons(){
         signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
@@ -73,10 +84,8 @@ class SignInViewController: UIViewController , UITextFieldDelegate {
 
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        layoutUI()
-    }
+
+    
 
     private func layoutUI(){
         let imageSize :CGFloat = 100
@@ -109,13 +118,25 @@ class SignInViewController: UIViewController , UITextFieldDelegate {
                   
               }
         
-        AuthManager.shared.signIn(with: email, password: password) { loggedIn in
-            if loggedIn {
-                //dismiss sign in
+        AuthManager.shared.signIn(with: email, password: password) { [weak self ] result in
+            
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let email):
+                    print(email)
+                    self?.dismiss(animated: true, completion: nil)
+                    break
+                case .failure(let error):
+                    print(error)
+                    let alert = UIAlertController(title: "Error", message: "Failed to sign in with given credentials", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+                    self?.present(alert, animated: true, completion: nil)
+                    self?.passwordField.text = nil
+                    break
+                }
             }
-            else {
-                //show error
-            }
+            
+
         }
     }
     

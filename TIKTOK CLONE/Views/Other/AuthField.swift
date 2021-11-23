@@ -20,6 +20,7 @@ class AuthField: UITextField {
     enum TextFieldType {
         case email
         case password
+        case username
         
         var title : String {
             switch self {
@@ -27,6 +28,8 @@ class AuthField: UITextField {
                 return "Email Address"
             case .password:
                 return "Password"
+            case .username:
+                return "Username"
             }
         }
     }
@@ -44,17 +47,19 @@ class AuthField: UITextField {
     }
     
     private func configureUI(){
+        autocapitalizationType = .none
         if self.type == .password {
             isSecureTextEntry = true
         }
         if type == .email {
             keyboardType = .emailAddress
+            textContentType = .emailAddress
         }
         backgroundColor = .secondarySystemBackground
         layer.cornerRadius = 8
         layer.masksToBounds = true
         placeholder = type.title
-        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: height)) //text field ke baju mein jo icon aata hai
+        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: height)) //text field ke baju mein jo icon aata hai woh wale space mein ek empty view rkh rhe hai 
         leftViewMode = .always
         returnKeyType = .done
 

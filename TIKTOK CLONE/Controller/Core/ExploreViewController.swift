@@ -8,7 +8,6 @@
 import UIKit
 
 
-
 class ExploreViewController: UIViewController {
     
     private let searchBar : UISearchBar = {
