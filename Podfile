@@ -13,6 +13,7 @@ target 'TIKTOK CLONE' do
 
   pod 'Appirater'
   pod 'SDWebImage'
+  pod 'ProgressHUD'
 
 
 
