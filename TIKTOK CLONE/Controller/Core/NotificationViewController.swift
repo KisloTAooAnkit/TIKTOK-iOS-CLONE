@@ -24,6 +24,9 @@ class NotificationViewController: UIViewController {
         return spinnner
     }()
     
+    
+    
+    
     private let tableView : UITableView = {
         let table = UITableView()
         table.register(Notifications_PostLikedTableCell.self,
@@ -38,6 +41,11 @@ class NotificationViewController: UIViewController {
         return table
     }()
     
+    private let refreshControl : UIRefreshControl = {
+       let control = UIRefreshControl()
+        return control
+    }()
+    
     private var notifications : [Notification] = []
     
     //MARK: - Init
@@ -49,8 +57,10 @@ class NotificationViewController: UIViewController {
         view.addSubview(noNotificationLabel)
         view.addSubview(spinner)
         // Do any additional setup after loading the view.
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh(_:)), for: .valueChanged)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.refreshControl = refreshControl
         fetchNotifications()
     }
     
@@ -89,8 +99,72 @@ class NotificationViewController: UIViewController {
         tableView.reloadData()
     }
     
+    @objc func didPullToRefresh(_ sender:UIRefreshControl){
+        sender.beginRefreshing()
+        
+        DatabaseManager.shared.getNotifications { [weak self] notifications in
+            
+            DispatchQueue.main.asyncAfter(deadline: .now()+3) {
+                self?.notifications = notifications
+                self?.tableView.reloadData()
+                sender.endRefreshing()
+            }
+            
+
+        }
+        
+        
+    }
+    
 }
 extension NotificationViewController : UITableViewDelegate,UITableViewDataSource{
+    
+    //status to allow table to edit a particular cell via user
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    //what type of operation user can perform
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    //what to do if user is performing that operation the cell (swipe to delete)
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //if action is not delete then we return early
+        guard editingStyle == .delete else {
+            return
+        }
+        var model = notifications[indexPath.row]
+        model.isHidden = true
+        DatabaseManager.shared.markNotificationAsHidden(notificationID: model.identifier) { [weak self] isCompleted in
+            
+            DispatchQueue.main.async {
+                if isCompleted {
+                    //update our notification array to remove those values who have their ishidden property set via cell delete action from user
+                    self?.notifications = self?.notifications.filter({ notification in
+                        notification.isHidden == false
+                    }) ?? []
+
+                    tableView.beginUpdates()
+                    tableView.deleteRows(at: [indexPath], with: .none)
+                    tableView.endUpdates()
+                }
+            }
+
+        }
+        //tableView.reloadData()
+        
+        //delete with animation
+
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -99,7 +173,10 @@ extension NotificationViewController : UITableViewDelegate,UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
         let notificationModel = notifications[indexPath.row]
+        
         switch notificationModel.type{
             
         case .postLike(let postName):
@@ -110,8 +187,8 @@ extension NotificationViewController : UITableViewDelegate,UITableViewDataSource
                     let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
                     return cell
                 }
-            
-            cell.configureWith(with: postName)
+            cell.delegate = self
+            cell.configureWith(with: postName,model: notificationModel)
             return cell
             
         
@@ -123,8 +200,8 @@ extension NotificationViewController : UITableViewDelegate,UITableViewDataSource
                     let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
                     return cell
                 }
-            
-            cell.configureWith(with: username)
+            cell.delegate = self
+            cell.configureWith(with: username, model: notificationModel)
             return cell
             
             
@@ -136,12 +213,54 @@ extension NotificationViewController : UITableViewDelegate,UITableViewDataSource
                     let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
                     return cell
                 }
-            
-            cell.configureWith(with: postName)
+            cell.delegate = self
+            cell.configureWith(with: postName, model: notificationModel)
             return cell
         }
         
     }
     
     
+}
+
+extension NotificationViewController : UserFollowedCellDelegate {
+    func notifications_UserFollowedTableCell(_ cell: Notifications_UserFollowedTableCell, didTapAvatarFor username: String) {
+        let vc = ProfileViewController(user: User(username: username, profilePictureURL: nil, identifier: "123"))
+        vc.title = username.uppercased()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func notifications_UserFollowedTableCell(_ cell: Notifications_UserFollowedTableCell, didTapFollowFor username: String) {
+        DatabaseManager.shared.follow(username: username) { success in
+            if !success {
+                print("something went wrong while following")
+            }
+        }
+    }
+    
+    
+}
+extension NotificationViewController : PostCommentCellDelegate{
+    func tappedOnPostCommentThumbnail(_ cell: Notifications_PostCommentTableCell, didTapPostwith identifier: String) {
+        openPost(with: identifier)
+    }
+    
+    
+}
+
+extension NotificationViewController : PostLikedCellDelegate{
+    func postLiked(_ cell: Notifications_PostLikedTableCell, didTapPostwith identifier: String) {
+        openPost(with: identifier)
+    }
+    
+    
+}
+
+extension NotificationViewController {
+    func openPost(with identifier : String){
+        //resolve model model from database for that id
+        let vc = PostViewController(model: PostModel(identifier: identifier))
+        vc.title = "Video"
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
