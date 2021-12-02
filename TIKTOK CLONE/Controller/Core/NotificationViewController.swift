@@ -259,7 +259,10 @@ extension NotificationViewController : PostLikedCellDelegate{
 extension NotificationViewController {
     func openPost(with identifier : String){
         //resolve model model from database for that id
-        let vc = PostViewController(model: PostModel(identifier: identifier))
+        let user = User(username: "Ankit",
+                        profilePictureURL: nil,
+                        identifier: UUID().uuidString)
+        let vc = PostViewController(model: PostModel(identifier: identifier,user:user))
         vc.title = "Video"
         navigationController?.pushViewController(vc, animated: true)
     }

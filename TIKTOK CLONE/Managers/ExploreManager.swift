@@ -106,8 +106,11 @@ final class ExploreManager {
                                  caption: recentPost.caption) { [weak self] in
                 DispatchQueue.main.async {
                     //use id to fetch post from firebase
+                    let user = User(username: "Ankit",
+                                    profilePictureURL: nil,
+                                    identifier: UUID().uuidString)
                     let postId = recentPost.id
-                    let vc = PostViewController(model: PostModel(identifier: postId))
+                    let vc = PostViewController(model: PostModel(identifier: postId, user: user))
                     self?.delegate?.pushViewController(vc)
                 }
 
@@ -125,8 +128,11 @@ final class ExploreManager {
                                  caption: trendingPost.caption) {[weak self] in
                 DispatchQueue.main.async {
                     //use id to fetch post from firebase
+                    let user = User(username: "Ankit",
+                                    profilePictureURL: nil,
+                                    identifier: UUID().uuidString)
                     let postId = trendingPost.id
-                    let vc = PostViewController(model: PostModel(identifier: postId))
+                    let vc = PostViewController(model: PostModel(identifier: postId, user: user))
                     self?.delegate?.pushViewController(vc)
                 }
                 
@@ -144,8 +150,11 @@ final class ExploreManager {
                                  caption: popularPost.caption) { [weak self] in
                 DispatchQueue.main.async {
                     //use id to fetch post from firebase
+                    let user = User(username: "Ankit",
+                                    profilePictureURL: nil,
+                                    identifier: UUID().uuidString)
                     let postId = popularPost.id
-                    let vc = PostViewController(model: PostModel(identifier: postId))
+                    let vc = PostViewController(model: PostModel(identifier: postId, user: user))
                     self?.delegate?.pushViewController(vc)
                 }
                 
@@ -163,8 +172,11 @@ final class ExploreManager {
                                  caption: recommendedPost.caption) { [weak self] in
                 DispatchQueue.main.async {
                     //use id to fetch post from firebase
+                    let user = User(username: "Ankit",
+                                    profilePictureURL: nil,
+                                    identifier: UUID().uuidString)
                     let postId = recommendedPost.id
-                    let vc = PostViewController(model: PostModel(identifier: postId))
+                    let vc = PostViewController(model: PostModel(identifier: postId,user:user))
                     self?.delegate?.pushViewController(vc)
                 }
                 

@@ -105,6 +105,28 @@ final class DatabaseManager {
         
     }
     
+    public func getPosts(for user:User , completion : @escaping ([PostModel])->Void){
+        
+        
+        let path = "user/\(user.username)/posts"
+        print(path)
+        database.child(path).observeSingleEvent(of: .value) { snapshot in
+            guard let posts = snapshot.value as? [[String:String]] else {
+                completion([])
+                return
+            }
+            
+            let models : [PostModel] = posts.compactMap { dict in
+                var model = PostModel(identifier: UUID().uuidString, user: user)
+                model.filename = dict["name"] as? String ?? ""
+                model.caption = dict["caption"] as? String ?? ""
+                return model
+            }
+            
+            completion(models)
+        }
+    }
+    
     public func markNotificationAsHidden(notificationID:String, completion : @escaping (Bool)->Void){
         completion(true)
     }

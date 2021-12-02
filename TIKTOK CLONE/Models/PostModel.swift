@@ -10,9 +10,9 @@ import Foundation
 struct PostModel {
     let identifier : String
     
-    let user = User(username: "Ankit",
-                    profilePictureURL: nil,
-                    identifier: UUID().uuidString)				
+    let user : User
+    var filename : String = ""
+    var caption : String = ""
     
     var isLikedByCurrentUser = false
     
@@ -21,7 +21,11 @@ struct PostModel {
         var posts = [PostModel]()
         
         for _ in 0...100 {
-            let post = PostModel(identifier: UUID().uuidString)
+            let post = PostModel(identifier: UUID().uuidString,
+                                 user:User(username: "Ankit",
+                                           profilePictureURL: nil,
+                                           identifier: UUID().uuidString)
+            )
             posts.append(post)
         }
         return posts
