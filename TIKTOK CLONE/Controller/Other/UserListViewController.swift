@@ -10,18 +10,26 @@ import UIKit
 class UserListViewController: UIViewController {
 
     
-    let tableView : UITableView = {
+    private let tableView : UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
     
+    private let noUsersLabel : UILabel = {
+        let label = UILabel()
+        label.text = "No Users"
+        label.textAlignment = .center
+        label.textColor = .secondaryLabel
+        return label
+    }()
     
-    enum ListType {
+    enum ListType : String {
         case followers
         case following
     }
     
+    public var users : [String] = []
     
     let user : User
     let type : ListType
@@ -44,29 +52,47 @@ class UserListViewController: UIViewController {
         tableView.delegate = self
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemBackground
-        switch type {
-        case .followers:
-            title = "Followers"
-        case .following:
-            title = "Following"
+        
+        if users.isEmpty
+        {
+            view.addSubview(noUsersLabel)
+            noUsersLabel.sizeToFit()
+        }
+        else {
+            switch type {
+            case .followers:
+                title = "Followers"
+            case .following:
+                title = "Following"
+
+        }
+        
+        
         
         }
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        if tableView.superview  == view {
+            tableView.frame = view.bounds
+        }
+        else {
+            noUsersLabel.center = view.center
+        }
     }
 }
 
 extension UserListViewController : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell",for: indexPath)
-        cell.textLabel?.text = "Hello"
+        cell.selectionStyle = .none
+        cell.textLabel?.text = users[indexPath.row]
         return cell
     }
     

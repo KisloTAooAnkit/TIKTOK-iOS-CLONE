@@ -9,11 +9,9 @@ import Foundation
 
 struct PostModel {
     let identifier : String
-    
     let user : User
     var filename : String = ""
     var caption : String = ""
-    
     var isLikedByCurrentUser = false
     
     
@@ -29,5 +27,9 @@ struct PostModel {
             posts.append(post)
         }
         return posts
+    }
+    
+    var videoChildPath : String {
+        return "videos/\(user.username)/\(filename)"
     }
 }

@@ -15,7 +15,7 @@ protocol PostViewControllerDelegate : AnyObject {
 
 
 class PostViewController: UIViewController {
-
+    
     //MARK: - Properties
     var model : PostModel
     
@@ -52,17 +52,31 @@ class PostViewController: UIViewController {
         button.tintColor = .white
         return button
     }()
-
     
+    private let spinner : UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.tintColor = .label
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+        return spinner
+    }()
     
     private let captionLabel : UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.textAlignment = .left
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 22)
         label.text = "Check out this video #foryou #foryoupage Check out this video #foryou #foryoupage Check out this video #foryou #foryoupage"
         label.textColor = .white
         return label
+    }()
+    
+    private let videoPlayBackView : UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.clipsToBounds = true
+        
+        return view
     }()
     
     
@@ -85,25 +99,33 @@ class PostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(videoPlayBackView)
+        videoPlayBackView.addSubview(spinner)
         configureVideo()
-        let colors  : [UIColor] = [
-            .gray,
-            .green,
-            .blue,
-            .brown,
-            .black,
-            .systemPink
-        ]
-        view.backgroundColor = colors.randomElement()
+//        let colors  : [UIColor] = [
+//            .gray,
+//            .green,
+//            .blue,
+//            .brown,
+//            .black,
+//            .systemPink
+//        ]
+//        view.backgroundColor = colors.randomElement()
         setupButtons()
         setupDoubleTapToLike()
         view.addSubview(captionLabel)
-
+        
         
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        
+        videoPlayBackView.frame = view.bounds
+        spinner.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        spinner.center = videoPlayBackView.center
+        
+        
         let size : CGFloat = 40
         let yStart : CGFloat = view.height - (size*4) - 30 - view.safeAreaInsets.bottom - (0)
         for (index,button) in [likeButton,commentButton,shareButton].enumerated(){
@@ -151,23 +173,55 @@ class PostViewController: UIViewController {
     
     
     private func configureVideo(){
-        guard let path = Bundle.main.path(forResource: "video", ofType: "mp4") else {
-            return
-        }
-        let url  = URL(fileURLWithPath: path)
-        player = AVPlayer(url: url)
         
-        let playerLayer = AVPlayerLayer(player: player)
-        playerLayer.frame = view.bounds
-        playerLayer.videoGravity = .resizeAspectFill
-        view.layer.addSublayer(playerLayer)
-        player?.volume = 0
-        player?.play()
+        StorageManager.shared.getDownloadURL(for: model) { [weak self] result in
+            DispatchQueue.main.async {
+
+                guard let self = self else {
+                    return
+                }
+                
+                self.spinner.stopAnimating()
+                self.spinner.stopAnimating()
+                switch result {
+                    
+                case .success(let url):
+                    
+                    self.player = AVPlayer(url: url)
+                    
+                    let playerLayer = AVPlayerLayer(player: self.player)
+                    playerLayer.frame = self.view.bounds
+                    playerLayer.videoGravity = .resizeAspectFill
+                    self.videoPlayBackView.layer.addSublayer(playerLayer)
+                    self.view.sendSubviewToBack(self.videoPlayBackView)
+                    self.player?.volume = 0
+                    self.player?.play()
+                    
+                case .failure(let error):
+                    guard let path = Bundle.main.path(forResource: "video", ofType: "mp4") else {
+                        return
+                    }
+                    
+                    let url  = URL(fileURLWithPath: path)
+                    self.player = AVPlayer(url: url)
+                    
+                    let playerLayer = AVPlayerLayer(player: self.player)
+                    playerLayer.frame = self.view.bounds
+                    playerLayer.videoGravity = .resizeAspectFill
+                    self.videoPlayBackView.layer.addSublayer(playerLayer)
+                    self.view.sendSubviewToBack(self.videoPlayBackView)
+                    self.player?.volume = 0
+                    self.player?.play()
+                }
+            }
+        }
+        
+        
         
         guard let player = player else {
             return
         }
-
+        
         
         playerDidFinishVideoObserver =  NotificationCenter.default.addObserver(
             forName: .AVPlayerItemDidPlayToEndTime, //which type of notification to be sent ?
@@ -210,7 +264,7 @@ class PostViewController: UIViewController {
                 })
             }
         }
-
+        
         
     }
     
@@ -242,6 +296,6 @@ class PostViewController: UIViewController {
         delegate?.postViewController(self, didTapCommentButtonFor: model)
     }
     
-
-
+    
+    
 }
