@@ -13,6 +13,3 @@ A simple tiktok home page clone with blackpink videos as sample
 **AVPlayerLooper** - used to automatically loop the videos
 
 
-## Videos Used
-
-From blackpink tiktok page :) 
