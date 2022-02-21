@@ -1,13 +1,14 @@
-# TikTokHomePageCloneUIKit
 
-iOS Tiktok Clone built with **Swift(Frontend)** and **UIKit**
+# Project Title
 
-A simple tiktok home page clone with blackpink videos as sample
-
-## Classes Used
-
-**UIScrollView** - used with pagination, each page is an instance of AVPlayerViewController
-
-**AVPlayerLooper** - used to automatically loop the videos
+This is a mockup clone of TikTok Application with Limited functionalities
 
 
+## App Premises
+- Allows user authentication via firebase auth services 
+- Uses firebase storage & Firebase Service to persist data on cloud including videos/photos 
+- Allows users to play video and view photos
+- Allows users to update profile picture 
+- Compositional Layout is used 
+- MVVM Design pattern 
+- Dark Mode support 
